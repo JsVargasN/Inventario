@@ -4,7 +4,8 @@
 El proyecto debe tener instalado Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Design
 
 **BASE DE DATOS:** *Insertar en el SqlServer*
-------------//--------------------------------//------------------------------------
+
+------------//--------------------------------//------------------------------//----------------
 
 CREATE DATABASE bd_inventario;
 GO
