@@ -1,0 +1,89 @@
+﻿@model Inventario.ViewModels.HomeViewModel
+
+<!-- Hero Section -->
+<div class="container-fluid bg-primary text-white py-5 mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Bienvenido a Mi Inventario</h1>
+        <p class="lead mb-4">Gestiona tu inventario de manera eficiente y profesional con nuestra solución integral.</p>
+        <a asp-controller="Productos" asp-action="Index" class="btn btn-light btn-lg">
+            <i class="bi bi-box-seam me-2"></i>Explorar Productos
+        </a>
+    </div>
+</div>
+
+<!-- Características -->
+<div class="container mb-5">
+    <h2 class="text-center text-primary mb-4">¿Por qué elegirnos?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="bi bi-box-seam display-4 text-primary mb-3"></i>
+                    <h5 class="card-title">Gestión de Productos</h5>
+                    <p class="card-text">Organiza y administra tus productos con facilidad, desde cualquier dispositivo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="bi bi-clipboard-data display-4 text-primary mb-3"></i>
+                    <h5 class="card-title">Control de Inventario</h5>
+                    <p class="card-text">Mantén un control preciso de tu inventario con herramientas avanzadas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="bi bi-tags display-4 text-primary mb-3"></i>
+                    <h5 class="card-title">Categorización</h5>
+                    <p class="card-text">Clasifica tus productos en categorías para una mejor organización.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estadísticas -->
+<div class="container mb-5">
+    <h2 class="text-center text-primary mb-4">Resumen de tu Inventario</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm text-center border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Total de Productos</h5>
+                    <h2 class="card-text text-primary fw-bold">@Model.TotalProductos</h2>
+                    <a asp-controller="Productos" asp-action="Index" class="btn btn-outline-primary btn-sm mt-2">
+                        Ver Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm text-center border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Categorías</h5>
+                    <h2 class="card-text text-success fw-bold">@Model.TotalCategorias</h2>
+                    <a asp-controller="Categorias" asp-action="Index" class="btn btn-outline-success btn-sm mt-2">
+                        Ver Categorías
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Llamado a la Acción -->
+<div class="container-fluid bg-light py-5">
+    <div class="container text-center">
+        <h3 class="mb-3">¿Listo para optimizar tu inventario?</h3>
+        <p class="lead mb-4">Comienza ahora y descubre cómo podemos ayudarte a llevar tu gestión al siguiente nivel.</p>
+        <a asp-controller="Productos" asp-action="Create" class="btn btn-primary btn-lg">
+            <i class="bi bi-plus-circle me-2"></i>Agregar un Producto
+        </a>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

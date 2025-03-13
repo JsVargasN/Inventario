@@ -1,0 +1,50 @@
+﻿@model List<Inventario.ViewModels.ProductosViewModel>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary">Lista de Productos</h2>
+    <a asp-action="Create" class="btn btn-success mb-3">
+        <i class="bi bi-plus-circle"></i> Agregar Producto
+    </a>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model)
+                    {
+                        <tr>
+                            <td>@producto.Id</td>
+                            <td>@producto.Nombre</td>
+                            <td>@producto.Precio.ToString("C")</td>
+                            <td>@producto.Stock</td>
+                            <td>@producto.CategoriaNombre</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@producto.Id" class="btn btn-sm btn-warning">
+                                    <i class="bi bi-pencil"></i> Editar
+                                </a>
+                                <a asp-action="Details" asp-route-id="@producto.Id" class="btn btn-sm btn-info">
+                                    <i class="bi bi-eye"></i> Detalles
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@producto.Id" class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Incluye Bootstrap Icons si no los tienes -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

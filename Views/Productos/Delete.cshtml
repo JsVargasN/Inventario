@@ -1,0 +1,33 @@
+﻿@model Inventario.ViewModels.ProductosViewModel
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-danger">Eliminar Producto</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4>¿Estás seguro de que quieres eliminar este producto?</h4>
+            <dl class="row">
+                <dt class="col-sm-2 fw-bold">ID:</dt>
+                <dd class="col-sm-10">@Model.Id</dd>
+                <dt class="col-sm-2 fw-bold">Nombre:</dt>
+                <dd class="col-sm-10">@Model.Nombre</dd>
+                <dt class="col-sm-2 fw-bold">Precio:</dt>
+                <dd class="col-sm-10">@Model.Precio.ToString("C")</dd>
+                <dt class="col-sm-2 fw-bold">Stock:</dt>
+                <dd class="col-sm-10">@Model.Stock</dd>
+                <dt class="col-sm-2 fw-bold">Categoría:</dt>
+                <dd class="col-sm-10">@Model.CategoriaNombre</dd>
+            </dl>
+            <form asp-action="Delete" method="post">
+                <input asp-for="Id" type="hidden" />
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-danger me-2">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
