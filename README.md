@@ -4,6 +4,8 @@
 El proyecto debe tener instalado Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Design
 
 **BASE DE DATOS:** *Insertar en el SqlServer*
+
+
 CREATE DATABASE bd_inventario;
 GO
 
@@ -39,7 +41,7 @@ INSERT INTO Productos (Nombre, Precio, Stock, CategoriaId)
 VALUES ('Camiseta', 19.99, 50, 2);
 GO
 
-
+------------//--------------------------------//------------------------------------
 
 En el archivo appsettings.json cambiar la cadena de conexión por la que aparece en su SQL SERVER
 
